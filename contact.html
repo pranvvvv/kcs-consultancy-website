@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Kotha Consultancy Services (KCS)</title>
+    <meta name="description" content="Get in touch with KCS for professional consultancy services. Call +91 9912914252 or email kothamahesh99129@gmail.com for immediate assistance.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <div class="logo-text">
+                        <span class="logo-main">KCS.</span>
+                        <span class="logo-sub">KOTHA CONSULTANCY SERVICES</span>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-contact">
+                    <a href="tel:+919912914252" class="header-phone">
+                        <i class="fas fa-phone"></i> +91 9912914252
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our expert team for professional consultation</p>
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> / <span>Contact</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+        <div class="container">
+            <div class="contact-intro">
+                <h2>Let's Start a Conversation</h2>
+                <p>Ready to take your business to the next level? Our team of experts is here to help you navigate through all your consultancy needs. Reach out to us today and let's discuss how we can assist you.</p>
+            </div>
+
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="method-content">
+                        <h3>Call Us</h3>
+                        <p>Speak directly with our consultants</p>
+                        <a href="tel:+919912914252" class="method-link">+91 9912914252</a>
+                        <small>Available: Mon-Sat, 9:00 AM - 7:00 PM</small>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="method-content">
+                        <h3>WhatsApp</h3>
+                        <p>Quick responses for urgent queries</p>
+                        <a href="https://wa.me/919912914252" class="method-link" target="_blank">Chat with us</a>
+                        <small>Response time: Usually within 1 hour</small>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="method-content">
+                        <h3>Email</h3>
+                        <p>Send us detailed inquiries</p>
+                        <a href="mailto:kothamahesh99129@gmail.com" class="method-link">kothamahesh99129@gmail.com</a>
+                        <small>Response time: Within 24 hours</small>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="method-content">
+                        <h3>Visit Us</h3>
+                        <p>Meet us in person for consultation</p>
+                        <span class="method-link">Cloud Office</span>
+                        <small>By appointment only</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-section">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h3>Send Us a Message</h3>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name (Optional)</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Required *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <optgroup label="Taxation Services">
+                                    <option value="GST Returns">GST Returns</option>
+                                    <option value="GST Appeals">GST Appeals</option>
+                                    <option value="Income Tax Filings">Income Tax Filings</option>
+                                </optgroup>
+                                <optgroup label="Registrations & Licenses">
+                                    <option value="Company Incorporation">Company Incorporation</option>
+                                    <option value="DSC">Digital Signature Certificate</option>
+                                    <option value="Labour Licence">Labour Licence</option>
+                                    <option value="Trade Licence">Trade Licence</option>
+                                    <option value="Food Licence">Food Licence (FSSAI)</option>
+                                </optgroup>
+                                <optgroup label="Global Services">
+                                    <option value="VISA Services">VISA Services</option>
+                                    <option value="Passport Services">Passport Services</option>
+                                </optgroup>
+                                <optgroup label="Financial Services">
+                                    <option value="Investment Planning">Investment Planning</option>
+                                    <option value="Loan Services">Loan Services</option>
+                                </optgroup>
+                                <optgroup label="Creative Services">
+                                    <option value="Branding & Design">Branding & Design</option>
+                                    <option value="Poster Design">Poster Design</option>
+                                </optgroup>
+                                <option value="Other">Other (Please specify in message)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgency">Urgency Level</label>
+                            <select id="urgency" name="urgency">
+                                <option value="normal">Normal (Within 1 week)</option>
+                                <option value="urgent">Urgent (Within 3 days)</option>
+                                <option value="critical">Critical (Within 24 hours)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Please provide details about your requirements, timeline, and any specific questions you have..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" value="yes">
+                                <span class="checkmark"></span>
+                                Subscribe to our newsletter for updates on tax laws and business regulations
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="terms" value="yes" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a> *
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Why Choose KCS?</h4>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check"></i> Expert team with years of experience</li>
+                            <li><i class="fas fa-check"></i> Quick turnaround time</li>
+                            <li><i class="fas fa-check"></i> Transparent pricing</li>
+                            <li><i class="fas fa-check"></i> 24/7 support via WhatsApp</li>
+                            <li><i class="fas fa-check"></i> 100% compliance guarantee</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>Quick Actions</h4>
+                        <div class="quick-actions">
+                            <a href="tel:+919912914252" class="quick-action">
+                                <i class="fas fa-phone"></i>
+                                <span>Call Now</span>
+                            </a>
+                            <a href="https://wa.me/919912914252" class="quick-action" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="mailto:kothamahesh99129@gmail.com" class="quick-action">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>Business Hours</h4>
+                        <div class="business-hours">
+                            <div class="hour-row">
+                                <span>Monday - Friday</span>
+                                <span>9:00 AM - 7:00 PM</span>
+                            </div>
+                            <div class="hour-row">
+                                <span>Saturday</span>
+                                <span>9:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="hour-row">
+                                <span>Sunday</span>
+                                <span>Emergency only</span>
+                            </div>
+                        </div>
+                        <small><i class="fas fa-info-circle"></i> WhatsApp support available 24/7</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How quickly can you process my GST return?</h4>
+                    <p>We typically process GST returns within 2-3 business days from the time we receive all required documents.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you provide support after service completion?</h4>
+                    <p>Yes, we provide ongoing support and are available via WhatsApp for any queries related to our services.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What documents do I need for company incorporation?</h4>
+                    <p>We'll provide you with a complete checklist of required documents once you initiate the service request.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Are your services available nationwide?</h4>
+                    <p>Yes, we provide services across India with digital document processing and online consultations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <div class="logo-text">
+                            <span class="logo-main">KCS.</span>
+                            <span class="logo-sub">KOTHA CONSULTANCY SERVICES</span>
+                        </div>
+                    </div>
+                    <p>Professional consultancy services for all your business needs. We provide only the best services.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">GST & Tax Services</a></li>
+                        <li><a href="services.html">Business Registration</a></li>
+                        <li><a href="services.html">Licenses</a></li>
+                        <li><a href="services.html">Investment Planning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +91 9912914252</p>
+                        <p><i class="fas fa-envelope"></i> kothamahesh99129@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Cloud Office</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kotha Consultancy Services (KCS). All rights reserved. | Developed by pranav devlpr</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919912914252" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
