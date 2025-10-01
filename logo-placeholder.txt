@@ -1,0 +1,8 @@
+<!-- This is a placeholder - you'll need to save the actual logo image as logo.png -->
+<!-- The logo should be saved as: logo.png in your project folder -->
+<!-- Image specifications: 
+     - Dark blue background (#1a3d6b or similar)
+     - White "K" and blue "CS." text
+     - "KOTHA CONSULTANCY SERVICES" subtitle
+     - Recommended size: 300x200px or similar ratio
+-->
