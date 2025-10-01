@@ -35,19 +35,33 @@ body {
 
 /* Header */
 .header {
-    background: var(--white);
-    box-shadow: 0 2px 10px rgba(44, 90, 160, 0.1);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 20px rgba(44, 90, 160, 0.1);
+    border-bottom: 1px solid rgba(44, 90, 160, 0.1);
 }
 
 .nav-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 1.5rem 0;
+    transition: padding 0.3s ease;
+}
+
+.header.scrolled .nav-wrapper {
     padding: 1rem 0;
 }
 
@@ -57,15 +71,36 @@ body {
 }
 
 .logo-img {
-    height: 50px;
+    height: 70px;
     width: auto;
-    max-width: 200px;
+    max-width: 280px;
     object-fit: contain;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.header.scrolled .logo-img {
+    height: 55px;
+    max-width: 220px;
 }
 
 .footer-logo {
-    height: 60px;
-    max-width: 250px;
+    height: 80px;
+    max-width: 300px;
+    filter: brightness(1.1);
+}
+
+/* Logo loading fallback */
+.logo-img[alt]:after {
+    content: attr(alt);
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 1.2rem;
 }
 
 /* Fallback text logo styles (if image fails to load) */
@@ -97,29 +132,64 @@ body {
 
 .nav-list a {
     text-decoration: none;
-    color: var(--dark-grey);
-    font-weight: 500;
-    transition: color 0.3s ease;
+    color: var(--white);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
 }
 
 .nav-list a:hover {
     color: var(--primary-blue);
+    background: rgba(255, 255, 255, 0.9);
+    text-shadow: none;
+    transform: translateY(-2px);
+}
+
+.header.scrolled .nav-list a {
+    color: var(--dark-grey);
+    text-shadow: none;
+}
+
+.header.scrolled .nav-list a:hover {
+    color: var(--primary-blue);
+    background: rgba(44, 90, 160, 0.1);
 }
 
 .header-phone {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--primary-blue);
+    color: var(--white);
     text-decoration: none;
     font-weight: 600;
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--primary-blue);
-    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
     transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .header-phone:hover {
+    background: var(--white);
+    color: var(--primary-blue);
+    border-color: var(--white);
+    text-shadow: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header.scrolled .header-phone {
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    background: transparent;
+    text-shadow: none;
+}
+
+.header.scrolled .header-phone:hover {
     background: var(--primary-blue);
     color: var(--white);
 }
@@ -142,10 +212,23 @@ body {
 .hero {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
     color: var(--white);
-    padding: 120px 0 80px;
+    padding: 140px 0 80px;
     min-height: 100vh;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.02)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .hero-content {
@@ -732,13 +815,26 @@ body {
     }
     
     .logo-img {
-        height: 40px;
-        max-width: 150px;
+        height: 60px;
+        max-width: 200px;
+    }
+    
+    .header.scrolled .logo-img {
+        height: 45px;
+        max-width: 160px;
     }
     
     .footer-logo {
-        height: 50px;
-        max-width: 180px;
+        height: 65px;
+        max-width: 220px;
+    }
+    
+    .nav-wrapper {
+        padding: 1.25rem 0;
+    }
+    
+    .header.scrolled .nav-wrapper {
+        padding: 0.75rem 0;
     }
     
     .hero {
@@ -826,6 +922,36 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Professional Header Animations */
+@keyframes logoEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.logo-img {
+    animation: logoEntrance 0.8s ease-out;
+}
+
+/* Glassmorphism effect for header */
+.header {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
 /* Loading Animation */
 @keyframes fadeInUp {
     from {
@@ -854,8 +980,21 @@ html {
 .page-header {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
     color: var(--white);
-    padding: 120px 0 80px;
+    padding: 140px 0 80px;
     text-align: center;
+    position: relative;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.02)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .page-header h1 {

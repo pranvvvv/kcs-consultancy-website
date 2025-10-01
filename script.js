@@ -32,12 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Header scroll effect
     const header = document.querySelector('.header');
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
         } else {
-            header.style.background = '#ffffff';
-            header.style.backdropFilter = 'none';
+            header.classList.remove('scrolled');
         }
     });
 });
