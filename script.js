@@ -1,11 +1,29 @@
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navList = document.querySelector('.nav-list');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileNav = document.getElementById('mobileNav');
     
-    if (mobileMenuToggle) {
+    if (mobileMenuToggle && mobileNav) {
         mobileMenuToggle.addEventListener('click', function() {
-            navList.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileNav.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
+                mobileNav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            }
         });
     }
 
@@ -371,6 +389,55 @@ function trackEvent(eventName, eventData) {
     // This is where you would integrate with Google Analytics, Facebook Pixel, etc.
     console.log('Event tracked:', eventName, eventData);
 }
+
+// Security enhancements
+document.addEventListener('DOMContentLoaded', function() {
+    // Immediate HTTPS redirect check
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+        // Show user-friendly message before redirect
+        if (confirm('This site requires a secure connection. Redirect to HTTPS version?')) {
+            location.replace('https://devlpr.me/kcs-consultancy-website/');
+        }
+    }
+    
+    // Add security headers via JavaScript (fallback)
+    if (typeof window !== 'undefined') {
+        // Prevent embedding in frames
+        if (window.top !== window.self) {
+            window.top.location = window.self.location;
+        }
+        
+        // Add security indicators
+        if (location.protocol === 'https:') {
+            console.log('✅ Secure connection established');
+            // Add visual security indicator
+            const securityIndicator = document.createElement('div');
+            securityIndicator.style.cssText = `
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                background: #28a745;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 15px;
+                font-size: 12px;
+                z-index: 10000;
+                opacity: 0.8;
+            `;
+            securityIndicator.innerHTML = '🔒 Secure';
+            document.body.appendChild(securityIndicator);
+            
+            // Remove indicator after 3 seconds
+            setTimeout(() => {
+                if (securityIndicator.parentNode) {
+                    securityIndicator.remove();
+                }
+            }, 3000);
+        } else {
+            console.warn('⚠️ Insecure connection detected');
+        }
+    }
+});
 
 // Track form submissions
 document.addEventListener('DOMContentLoaded', function() {

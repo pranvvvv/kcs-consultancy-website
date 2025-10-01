@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://devlpr.me/kcs-consultancy-website/sitemap.xml
+
+# Allow crawling of main pages
+Allow: /index.html
+Allow: /services.html
+Allow: /contact.html
+Allow: /styles.css
+Allow: /script.js
+Allow: /logo.png
+
+# Disallow sensitive files
+Disallow: /*.log
+Disallow: /.*
+Disallow: /sw.js
+
+# Crawl-delay (optional)
+Crawl-delay: 1
